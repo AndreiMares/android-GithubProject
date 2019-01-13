@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+		<!-- Top toolbar-->
+		<RelativeLayout
+				android:id="@+id/activity_repo_rl_top"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+			<include layout="@layout/snippet_top_appbar"/>
+
+		</RelativeLayout>
+
+		<!-- Middle section(body)-->
+		<FrameLayout
+				android:id="@+id/activity_repo_rl_middle"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_below="@+id/activity_repo_rl_top">
+
+		</FrameLayout>
+
+
+	</RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

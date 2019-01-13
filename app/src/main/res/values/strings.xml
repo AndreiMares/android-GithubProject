@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">GitHubRepoList</string>
+    <string name="empty_list">No items in the list</string>
+    <string name="john_doe">John Doe</string>
+
+    <!--RepoActivity strings-->
+    <string name="activity_repo_tv_title">GitHub repository list</string>
+
+    <!--RepoDetailActivity strings-->
+    <string name="activity_repoDetail_tv_title"> Repository Detail</string>
+
+    <!--RepoListFragment strings-->
+    <string name="fragment_repoList_tv_name">Name: </string>
+    <string name="fragment_repoList_tv_description">Description: </string>
+    <string name="fragment_repoList_tv_score">Score: </string>
+
+    <!--RepoDetailFragment strings-->
+    <string name="fragment_repoDetail_tv_forks">Forks </string>
+    <string name="fragment_repoDetail_tv_watchers">Watchers </string>
+    <string name="fragment_repoDetail_tv_userName">User name </string>
+    <string name="fragment_repoDetail_tv_userUrl">User url </string>
+    <string name="fragment_repoDetail_btn_open">Open Readme file</string>
+
+</resources>

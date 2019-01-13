@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<import type="android.view.View"/>
+
+		<variable
+				name="model"
+				type="com.example.android.githubrepolist.viewmodel.RepoDetailViewModel"/>
+
+	</data>
+
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:focusable="true"
+			android:focusableInTouchMode="true">
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="@dimen/activity_vertical_margin"
+				android:orientation="vertical"
+				android:paddingStart="@dimen/activity_horizontal_padding"
+				android:paddingEnd="@dimen/activity_horizontal_padding">
+
+			<android.support.design.widget.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+				<android.support.design.widget.TextInputEditText
+						android:id="@+id/activity_member_detail_et_userName"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="@dimen/activity_vertical_margin"
+						android:enabled="false"
+						android:hint="@string/fragment_repoDetail_tv_userName"
+						android:singleLine="true"
+						android:textSize="@dimen/text_input"
+						android:text="@={model.repository.name}"/>
+
+
+			</android.support.design.widget.TextInputLayout>
+
+			<android.support.design.widget.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+				<android.support.design.widget.TextInputEditText
+						android:id="@+id/fragmente_repo_detail_et_fork"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="@dimen/activity_vertical_margin"
+						android:enabled="false"
+						android:hint="@string/fragment_repoDetail_tv_forks"
+						android:singleLine="true"
+						android:textSize="@dimen/text_input"
+						android:text="@={model.repository.repoForks}"/>
+
+
+			</android.support.design.widget.TextInputLayout>
+
+			<android.support.design.widget.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+				<android.support.design.widget.TextInputEditText
+						android:id="@+id/activity_member_detail_et_watchers"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="@dimen/activity_vertical_margin"
+						android:enabled="false"
+						android:hint="@string/fragment_repoDetail_tv_watchers"
+						android:singleLine="true"
+						android:textSize="@dimen/text_input"
+						android:text="@={model.repository.repoWatchers}"/>
+
+			</android.support.design.widget.TextInputLayout>
+
+			<android.support.design.widget.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+
+				<android.support.design.widget.TextInputEditText
+						android:id="@+id/activity_member_detail_et_url"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="@dimen/activity_vertical_margin"
+						android:enabled="false"
+						android:hint="@string/fragment_repoDetail_tv_userUrl"
+						android:singleLine="true"
+						android:textSize="@dimen/text_input"
+						android:text="@={model.repository.url}"/>
+
+			</android.support.design.widget.TextInputLayout>
+
+			<Button android:id="@+id/fragment_repo_detail_btn_open"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/fragment_repoDetail_btn_open"
+					android:textAllCaps="false"
+					android:onClick="@{() -> model.onButtonClick(model.repository.id)}"/>
+
+		</LinearLayout>
+
+		<include
+				layout="@layout/layout_progressbar"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				android:visibility="@{model.onDataLoading ? View.VISIBLE : View.GONE}"/>
+
+	</RelativeLayout>
+
+</layout>
